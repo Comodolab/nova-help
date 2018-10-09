@@ -1,4 +1,4 @@
-# Nova Help Field
+# Laravel Nova Help Field
 
 A custom Nova fields which allows to show custom help messages within form, detail and index screens.
 
@@ -107,7 +107,7 @@ Help::make('Look I\'m on the side')
 
 ![Base example](./docs/label.png)
 
-### On index
+### Show help messages on index
 
 ```php
 /**
