@@ -9,7 +9,7 @@ A custom Nova fields which allows to show custom help messages within form, deta
 Run this command in your nova project: 
 
 ```bash
-composer require comodolab/nova-help-field
+composer require comodolab/nova-help
 ```
 
 Then you can use the field in your resource as follow:
