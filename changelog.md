@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Fix package name in composer.json
+
 ## 0.0.1 - 2018-10-09
 
 ### Added
