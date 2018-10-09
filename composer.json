@@ -1,0 +1,36 @@
+{
+    "name": "comodolab/help",
+    "description": "A Laravel Nova help field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "help"
+    ],
+    "authors": [
+        {
+            "name": "Alessandro Benoit",
+            "email": "alessandro@comodolab.it"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Comodolab\\Nova\\Fields\\Help\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Comodolab\\Nova\\Fields\\Help\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
