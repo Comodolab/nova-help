@@ -38,6 +38,13 @@ class Help extends Field
     protected $svgIcons = [];
 
     /**
+     * The text alignment for the field's text in tables.
+     *
+     * @var string
+     */
+    public $textAlign = 'center';
+
+    /**
      * Help constructor.
      *
      * @param string $name
