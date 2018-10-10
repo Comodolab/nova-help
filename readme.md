@@ -1,4 +1,4 @@
-# Nova Help Field
+# Laravel Nova Help Field
 
 A custom Nova fields which allows to show custom help messages within form, detail and index screens.
 
@@ -55,8 +55,11 @@ Help::make('title', 'message')->type('warning');
 ```php
 Help::make('Only title');
 Help::make()->message('Only message');
+```
 
-// The message can take also a callable
+### Messages can also be callable
+
+```php
 Help::make()->message(function () {
     return "{$this->name} is awesome!";
 });
@@ -107,7 +110,7 @@ Help::make('Look I\'m on the side')
 
 ![Base example](./docs/label.png)
 
-### On index
+### Show help messages on index
 
 ```php
 /**
@@ -118,6 +121,11 @@ Help::make('Look I\'m on the side')
 Help::make('Column title')
     ->message('Message with <a href="#">link</a>') // The link code will be stripped out on index
     ->alsoOnIndex();
+    
+// Field icons can be shown conditionally on index
+Help::make()->message(function () {
+    return $this->name?"{$this->name} is awesome!":null;
+})->onlyOnIndex();
 ```
 
 ![Base example](./docs/tooltip.png)
