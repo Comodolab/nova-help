@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="text-center">
         <div class="pr-4 comodolab-help-field-icon-container inline-block"
              :class="iconClass"
              :data-balloon="field.message.replace(/<(?:.|\n)*?>/gm, '')"
