@@ -3,7 +3,7 @@
         <div class="pr-4 comodolab-help-field-icon-container inline-block"
              :class="iconClass"
              :data-balloon="field.message.replace(/<(?:.|\n)*?>/gm, '')"
-             v-html="field.icon" v-if="field.icon"></div>
+             v-html="field.icon" v-if="field.icon && field.message"></div>
     </div>
 </template>
 

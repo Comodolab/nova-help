@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Improve docs
+- Fix #1 - On index view show the icon only when message is present
+
 
 ## [0.0.3] - 2018-10-09
 

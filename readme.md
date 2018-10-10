@@ -55,8 +55,11 @@ Help::make('title', 'message')->type('warning');
 ```php
 Help::make('Only title');
 Help::make()->message('Only message');
+```
 
-// The message can take also a callable
+### Messages can also be callable
+
+```php
 Help::make()->message(function () {
     return "{$this->name} is awesome!";
 });
@@ -121,3 +124,12 @@ Help::make('Column title')
 ```
 
 ![Base example](./docs/tooltip.png)
+
+### Conditionally show help messages on index
+
+```php
+// If the name is empty the icon will not be shown at all
+Help::make()->message(function () {
+    return $this->name?"{$this->name} is awesome!":null;
+})->onlyOnIndex();
+```
