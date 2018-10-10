@@ -121,15 +121,11 @@ Help::make('Look I\'m on the side')
 Help::make('Column title')
     ->message('Message with <a href="#">link</a>') // The link code will be stripped out on index
     ->alsoOnIndex();
-```
-
-![Base example](./docs/tooltip.png)
-
-### Conditionally show help messages on index
-
-```php
-// If the name is empty the icon will not be shown at all
+    
+// Field icons can be shown conditionally on index
 Help::make()->message(function () {
     return $this->name?"{$this->name} is awesome!":null;
 })->onlyOnIndex();
 ```
+
+![Base example](./docs/tooltip.png)
