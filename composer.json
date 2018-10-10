@@ -14,11 +14,17 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "laravel/nova": "*"
     },
     "autoload": {
         "psr-4": {
             "Comodolab\\Nova\\Fields\\Help\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Comodolab\\Nova\\Fields\\Help\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -32,5 +38,8 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^3.7"
+    }
 }
