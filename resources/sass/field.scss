@@ -68,7 +68,8 @@
   content: attr(data-balloon);
   padding: .5em 1em;
   position: absolute;
-  white-space: nowrap;
+  max-width: 300px;
+  width: max-content;
   z-index: 10;
 }
 
