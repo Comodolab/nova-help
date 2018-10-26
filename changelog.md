@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] - 2018-10-26
+
+### Fixed
+- Fix long text overflow in the balloon on index view (@bomshteyn)
+
 ## [0.0.5] - 2018-10-17
 
 ### Fixed
@@ -34,7 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First commit
 - Add the changelog
 
-[Unreleased]: https://github.com/comodolab/nova-help/compare/0.0.5...HEAD
+[Unreleased]: https://github.com/comodolab/nova-help/compare/0.0.6...HEAD
+[0.0.6]: https://github.com/comodolab/nova-help/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/comodolab/nova-help/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/comodolab/nova-help/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/comodolab/nova-help/compare/0.0.2...0.0.3
