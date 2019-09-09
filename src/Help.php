@@ -2,6 +2,7 @@
 
 namespace Comodolab\Nova\Fields\Help;
 
+use Illuminate\Support\Arr;
 use Laravel\Nova\Fields\Field;
 
 class Help extends Field
@@ -151,7 +152,7 @@ class Help extends Field
 
     public function icon(string $icon): self
     {
-        if ($svg = array_get($this->svgIcons, $icon)) {
+        if ($svg = Arr::get($this->svgIcons, $icon)) {
             $icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">' . $svg . '</svg>';
         }
 
