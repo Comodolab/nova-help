@@ -4,6 +4,10 @@ A custom Nova fields which allows to show custom help messages within form, deta
 
 ![Base example](./docs/main.png)
 
+## Changelog
+
+See [changelog here](changelog.md).
+
 ## Install
 
 Run this command in your nova project: 

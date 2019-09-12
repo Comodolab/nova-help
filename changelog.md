@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2019-09-12
+
+### Changed
+- Add Laravel 6.0 compatibility (See PR #6 - @mikebronner)
+
 ## [0.0.6] - 2018-10-26
 
 ### Fixed
@@ -40,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add the changelog
 
 [Unreleased]: https://github.com/comodolab/nova-help/compare/0.0.6...HEAD
+[0.1.0]: https://github.com/comodolab/nova-help/compare/0.0.6...0.1.0
 [0.0.6]: https://github.com/comodolab/nova-help/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/comodolab/nova-help/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/comodolab/nova-help/compare/0.0.3...0.0.4
