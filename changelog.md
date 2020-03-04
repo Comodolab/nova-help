@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Add Laravel 7.0 support (See PR #8 - @weeg)
+- Updated laravel mix version to ^4.0
 
 ### Fixed
 - Fix issue with FormField border-radius not being applied for first/last child
