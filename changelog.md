@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2020-03-04
+
+### Changed
+- Add Laravel 7.0 support (See PR #8 - @weeg)
+- Updated laravel mix version to ^4.0
+
+### Fixed
+- Fix issue with FormField border-radius not being applied for first/last child
+- Fixed multiple incongruences with latest version of Nova
+- Fixed #4 - Display as html only works on message but not title
+
 ## [0.1.0] - 2019-09-12
 
 ### Changed
@@ -44,7 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First commit
 - Add the changelog
 
-[Unreleased]: https://github.com/comodolab/nova-help/compare/0.0.6...HEAD
+[Unreleased]: https://github.com/comodolab/nova-help/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/comodolab/nova-help/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/comodolab/nova-help/compare/0.0.6...0.1.0
 [0.0.6]: https://github.com/comodolab/nova-help/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/comodolab/nova-help/compare/0.0.4...0.0.5
