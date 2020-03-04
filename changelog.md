@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Fix issue with FormField border-radius not being applied for first/last child
+- Fixed multiple incongruences with latest version of Nova
+- Fixed #4 - Display as html only works on message but not title
 
 ## [0.1.0] - 2019-09-12
 

@@ -94,6 +94,8 @@ Help::make('Sad')->withoutIcon();
 Help::make('Title', 'Message with <a href="#">link</a>')->displayAsHtml();
 ```
 
+From v0.2 the `displayAsHtml()` method applies also to the field name (unless shown as column header on index).
+
 ### Full width on details screen
 
 ```php
