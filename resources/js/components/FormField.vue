@@ -56,9 +56,9 @@
                 let fieldClasses = '';
 
                 let fieldTypes = {
-                    info: 'bg-info text-white',
-                    warning: 'bg-warning text-warning-dark',
-                    danger: 'bg-danger text-white',
+                    info: 'bg-info-light text-info-dark',
+                    warning: 'bg-warning-light text-warning-dark',
+                    danger: 'bg-danger-light text-danger-dark',
                     header: 'bg-30'
                 };
 
