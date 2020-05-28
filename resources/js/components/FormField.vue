@@ -55,12 +55,8 @@
             fieldClasses() {
                 let fieldClasses = '';
 
-                let fieldTypes = {
-                    info: 'bg-info-light text-info-dark',
-                    warning: 'bg-warning-light text-warning-dark',
-                    danger: 'bg-danger-light text-danger-dark',
-                    header: 'bg-30'
-                };
+                let fieldTypes = this.field.typeClasses;
+                fieldTypes.header = 'bg-30';
 
                 fieldClasses = fieldTypes[this.field.type] || '';
 
