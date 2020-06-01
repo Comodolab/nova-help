@@ -2,7 +2,7 @@
 
 A custom Nova fields which allows to show custom help messages within form, detail and index screens.
 
-![Base example](./docs/main.png)
+![Base example](./docs/nova-help.jpg)
 
 ## Changelog
 
@@ -39,6 +39,7 @@ public function fields(Request $request)
 
 ```php
 Help::make('title', 'message'); // Default help message
+Help::success('title', 'message');
 Help::info('title', 'message');
 Help::warning('title', 'message');
 Help::danger('title', 'message');

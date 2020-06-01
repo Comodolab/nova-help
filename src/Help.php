@@ -2,7 +2,6 @@
 
 namespace Comodolab\Nova\Fields\Help;
 
-use Exception;
 use Illuminate\Support\Arr;
 use Laravel\Nova\Fields\Field;
 

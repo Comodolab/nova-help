@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added new Success template type (thx to [@harlekoy](https://github.com/harlekoy))
+- Added missing PHPDoc to PHP field type
+
+### Changed
+- Changed template types css color classes to be more easy on the eyes and match Laravel Nova [Badge Field](https://nova.laravel.com/docs/3.0/resources/fields.html#badge-field) (thx to [@harlekoy](https://github.com/harlekoy))
+- Changed templates css classes to be defined in PHP field type instead of inside the Vue component (thx to [@harlekoy](https://github.com/harlekoy))
+
 ## [0.2.0] - 2020-03-04
 
 ### Changed
