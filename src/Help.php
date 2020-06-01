@@ -46,6 +46,23 @@ class Help extends Field
     public $textAlign = 'center';
 
     /**
+     * @var string
+     */
+    public $type;
+
+    /**
+     * The built-in help types and their corresponding CSS classes.
+     *
+     * @var array
+     */
+    public $types = [
+        'success' => 'bg-success-light text-success-dark',
+        'info' => 'bg-info-light text-info-dark',
+        'danger' => 'bg-danger-light text-danger-dark',
+        'warning' => 'bg-warning-light text-warning-dark',
+    ];
+
+    /**
      * Help constructor.
      *
      * @param string $name
@@ -62,11 +79,55 @@ class Help extends Field
         $this->loadDefaultIcons()->icon('help');
     }
 
+    /**
+     * Load default icons.
+     *
+     * @return $this
+     */
     private function loadDefaultIcons(): self
     {
         $this->svgIcons = require(dirname(__DIR__) . '/icons.php');
 
         return $this;
+    }
+
+    /**
+     * Add badge types and their corresponding CSS classes to the built-in ones.
+     *
+     * @param  array  $types
+     * @return $this
+     */
+    public function addTypes(array $types)
+    {
+        $this->types = array_merge($this->types, $types);
+
+        return $this;
+    }
+
+    /**
+     * Set the badge types and their corresponding CSS classes.
+     *
+     * @param  array  $types
+     * @return $this
+     */
+    public function types(array $types)
+    {
+        $this->types = $types;
+
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     * @param string|callable|null $message
+     *
+     * @return self
+     */
+    public static function success(string $title = '', $message = null): self
+    {
+        return static::make($title, $message)
+            ->type('success')
+            ->icon('success');
     }
 
     /**
@@ -122,9 +183,17 @@ class Help extends Field
             ->withoutIcon();
     }
 
+    /**
+     * Set type.
+     *
+     * @param  string $type
+     * @return $this
+     */
     public function type(string $type): self
     {
-        return $this->withMeta(compact('type'));
+        $this->type = $type;
+
+        return $this;
     }
 
     /**
@@ -140,16 +209,32 @@ class Help extends Field
         return $this->withMeta(compact('message'));
     }
 
+    /**
+     * With side label.
+     *
+     * @return $this
+     */
     public function withSideLabel(): self
     {
         return $this->withMeta(['sideLabel' => true]);
     }
 
+    /**
+     * Display as HTML.
+     *
+     * @return $this
+     */
     public function displayAsHtml(): self
     {
         return $this->withMeta(['asHtml' => true]);
     }
 
+    /**
+     * Set icon.
+     *
+     * @param  string $icon
+     * @return $this
+     */
     public function icon(string $icon): self
     {
         if ($svg = Arr::get($this->svgIcons, $icon)) {
@@ -159,11 +244,21 @@ class Help extends Field
         return $this->withMeta(compact('icon'));
     }
 
+    /**
+     * Disable icon.
+     *
+     * @return $this
+     */
     public function withoutIcon(): self
     {
         return $this->withMeta(['icon' => null]);
     }
 
+    /**
+     * Show full width on detail.
+     *
+     * @return $this
+     */
     public function showFullWidthOnDetail(): self
     {
         $this->showOnDetail = true;
@@ -172,10 +267,28 @@ class Help extends Field
             ->withMeta(['fullWidthOnDetail' => true]);
     }
 
+    /**
+     * Display on index.
+     *
+     * @return $this
+     */
     public function alsoOnIndex(): self
     {
         $this->showOnIndex = true;
 
         return $this;
+    }
+
+    /**
+     * Prepare the element for JSON serialization.
+     *
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return array_merge(parent::jsonSerialize(), [
+            'type' => $this->type,
+            'typeClasses' => $this->types,
+        ]);
     }
 }
