@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2020-06-01
+
 ### Added
 - Added new Success template type (thx to [@harlekoy](https://github.com/harlekoy))
-- Added missing PHPDoc to PHP field type
+- Added missing PHPDoc to PHP field type (thx to [@harlekoy](https://github.com/harlekoy))
 
 ### Changed
 - Changed template types css color classes to be more easy on the eyes and match Laravel Nova [Badge Field](https://nova.laravel.com/docs/3.0/resources/fields.html#badge-field) (thx to [@harlekoy](https://github.com/harlekoy))
@@ -63,7 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First commit
 - Add the changelog
 
-[Unreleased]: https://github.com/comodolab/nova-help/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/comodolab/nova-help/compare/0.3.0...HEAD
+[0.3.0]: https://github.com/comodolab/nova-help/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/comodolab/nova-help/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/comodolab/nova-help/compare/0.0.6...0.1.0
 [0.0.6]: https://github.com/comodolab/nova-help/compare/0.0.5...0.0.6
