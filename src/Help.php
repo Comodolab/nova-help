@@ -20,8 +20,9 @@ class Help extends Field
      * @var array
      */
     public $meta = [
-        'sideLabel' => false,
-        'icon'      => 'help'
+        'sideLabel'   => false,
+        'icon'        => 'help',
+        'collapsible' => false,
     ];
 
     /**
@@ -267,6 +268,11 @@ class Help extends Field
             ->withMeta(['fullWidthOnDetail' => true]);
     }
 
+    public function collapsible(): self
+    {
+        return $this->withMeta(['collapsible' => true]);
+    }
+
     /**
      * Display on index.
      *
@@ -283,9 +289,14 @@ class Help extends Field
      * Prepare the element for JSON serialization.
      *
      * @return array
+     * @throws \Exception
      */
     public function jsonSerialize()
     {
+        if ($this->meta['collapsible'] && $this->meta['sideLabel']){
+            throw new \Exception('Help field cannot be both collapsible and have a side label!');
+        }
+
         return array_merge(parent::jsonSerialize(), [
             'type' => $this->type,
             'typeClasses' => $this->types,

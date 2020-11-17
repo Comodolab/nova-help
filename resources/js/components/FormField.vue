@@ -13,9 +13,16 @@
                     <div>
                         <template v-if="!field.sideLabel && field.name">
                             <h4 v-if="field.asHtml" v-html="field.name"></h4>
-                            <h4 v-else :class="{'mb-2':field.message}">{{field.name}}</h4>
+                            <h4 v-else :class="{'mb-2':field.message && !collapsed, 'clickable':field.collapsible}"
+                                @click="toggle">
+                                {{field.name}}
+                                <div class="collapsible-caret"
+                                     v-if="field.message && field.collapsible"
+                                     :class="collapsed?'closed':'open'"
+                                     @click="toggle"></div>
+                            </h4>
                         </template>
-                        <div :class="messageClasses">
+                        <div :class="messageClasses" v-if="displayMessage">
                             <div v-if="field.asHtml" v-html="field.message"></div>
                             <div v-else>{{field.message}}</div>
                         </div>
@@ -34,10 +41,22 @@
 
         props: ['resourceName', 'resourceId', 'field', 'context'],
 
+        data() {
+            return {
+                collapsed: this.field.collapsible
+            }
+        },
+
         methods: {
             fill(formData) {
                 // Do nothing...
             },
+            toggle(){
+                if (!this.field.collapsible){
+                    return;
+                }
+                this.collapsed = !this.collapsed;
+            }
         },
 
         computed: {
@@ -76,6 +95,9 @@
             },
             shownOnDetails() {
                 return this.context === 'details';
+            },
+            displayMessage(){
+                return !this.collapsed || !this.field.collapsible || !this.field.name || this.field.sideLabel
             }
         },
     }
@@ -91,5 +113,24 @@
             border-radius: 0 0 .5rem .5rem;
             overflow: hidden
         }
+    }
+    .collapsible-caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-bottom: 2px;
+        margin-left: 5px;
+        cursor: pointer;
+        &.closed {
+            border-top: 5px solid rgba(0,0,0,0.2);
+        }
+        &.open {
+            border-bottom: 5px solid rgba(0,0,0,0.2);
+        }
+    }
+    .clickable {
+        cursor: pointer;
     }
 </style>
