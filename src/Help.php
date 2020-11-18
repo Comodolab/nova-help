@@ -274,6 +274,11 @@ class Help extends Field
             ->withMeta(['fullWidthOnDetail' => true]);
     }
 
+    /**
+     * Allows to make a field collapsible.
+     *
+     * @return $this
+     */
     public function collapsible(): self
     {
         return $this->withMeta(['collapsible' => true]);
@@ -307,7 +312,13 @@ class Help extends Field
         ]);
     }
 
-    private function validateCollapsible()
+    /**
+     * Validate that the right conditions are applied
+     * to make the field collapsible.
+     *
+     * @throws Exception
+     */
+    private function validateCollapsible(): void
     {
         if (!Arr::get($this->meta, 'collapsible')){
            return;

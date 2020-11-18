@@ -121,7 +121,6 @@
         border-right: 5px solid transparent;
         margin-bottom: 2px;
         margin-left: 5px;
-        cursor: pointer;
         &.closed {
             border-top: 5px solid rgba(0,0,0,0.2);
         }
