@@ -2,9 +2,15 @@
 
 namespace Comodolab\Nova\Fields\Help;
 
+use Exception;
 use Illuminate\Support\Arr;
 use Laravel\Nova\Fields\Field;
 
+/**
+ * Class Help
+ * @package Comodolab\Nova\Fields\Help
+ * @property string $name
+ */
 class Help extends Field
 {
     /**
@@ -20,8 +26,9 @@ class Help extends Field
      * @var array
      */
     public $meta = [
-        'sideLabel' => false,
-        'icon'      => 'help'
+        'sideLabel'   => false,
+        'icon'        => 'help',
+        'collapsible' => false,
     ];
 
     /**
@@ -268,6 +275,16 @@ class Help extends Field
     }
 
     /**
+     * Allows to make a field collapsible.
+     *
+     * @return $this
+     */
+    public function collapsible(): self
+    {
+        return $this->withMeta(['collapsible' => true]);
+    }
+
+    /**
      * Display on index.
      *
      * @return $this
@@ -283,12 +300,36 @@ class Help extends Field
      * Prepare the element for JSON serialization.
      *
      * @return array
+     * @throws Exception
      */
     public function jsonSerialize()
     {
+        $this->validateCollapsible();
+
         return array_merge(parent::jsonSerialize(), [
             'type' => $this->type,
             'typeClasses' => $this->types,
         ]);
+    }
+
+    /**
+     * Validate that the right conditions are applied
+     * to make the field collapsible.
+     *
+     * @throws Exception
+     */
+    private function validateCollapsible(): void
+    {
+        if (!Arr::get($this->meta, 'collapsible')){
+           return;
+        }
+
+        if (Arr::get($this->meta, 'sideLabel')){
+            throw new Exception('Help fields cannot be both collapsible and have a side label!');
+        }
+
+        if (!$this->name || !Arr::get($this->meta, 'message')){
+            throw new Exception('Collapsible help fields must define both a title and a message!');
+        }
     }
 }

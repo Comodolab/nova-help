@@ -117,6 +117,20 @@ Help::make('Look I\'m on the side')
 
 ![Base example](./docs/label.png)
 
+### Collapsible help fields
+
+Help fields can be made collapsible using the fluent method `collapsible()`. 
+Collapsible help fields are collapsed by default and toggle their state clicking on their title.
+Also, keep in mind that collapsible fields must define both a title and message and cannot be used with side labels.
+
+```php
+// Collapsible field
+Help::info('Click here to toggle', 'Lorem ipsum dolor sit amet...')
+    ->collapsible();
+```
+
+![Base example](./docs/collapsible.png)
+
 ### Show help messages on index
 
 ```php
