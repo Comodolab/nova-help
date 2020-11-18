@@ -12,14 +12,13 @@
                     <div class="pr-4 comodolab-help-field-icon-container" v-html="field.icon" v-if="field.icon"></div>
                     <div>
                         <template v-if="!field.sideLabel && field.name">
-                            <h4 v-if="field.asHtml" v-html="field.name"></h4>
+                            <h4 v-if="field.asHtml" v-html="field.name" @click="toggle"></h4>
                             <h4 v-else :class="{'mb-2':field.message && !collapsed, 'clickable':field.collapsible}"
                                 @click="toggle">
                                 {{field.name}}
                                 <div class="collapsible-caret"
                                      v-if="field.message && field.collapsible"
-                                     :class="collapsed?'closed':'open'"
-                                     @click="toggle"></div>
+                                     :class="collapsed?'closed':'open'"></div>
                             </h4>
                         </template>
                         <div :class="messageClasses" v-if="displayMessage">
