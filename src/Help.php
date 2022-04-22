@@ -297,12 +297,11 @@ class Help extends Field
     }
 
     /**
-     * Prepare the element for JSON serialization.
+     * Prepare the field for JSON serialization.
      *
-     * @return array
-     * @throws Exception
+     * @return array<string, mixed>
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $this->validateCollapsible();
 
