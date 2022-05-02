@@ -1,5 +1,5 @@
 <template>
-    <field-wrapper>
+    <FieldWrapper>
         <div class="comodolab-help-field-container flex w-full">
             <div :class="labelClasses" v-if="field.sideLabel">
                 <label class="inline-block text-80 leading-tight">
@@ -29,11 +29,11 @@
                 </div>
             </div>
         </div>
-    </field-wrapper>
+    </FieldWrapper>
 </template>
 
 <script>
-    import {FormField} from 'laravel-nova'
+    import { FormField } from 'laravel-nova'
 
     export default {
         mixins: [FormField],

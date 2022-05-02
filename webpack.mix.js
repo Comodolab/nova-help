@@ -1,5 +1,12 @@
 let mix = require('laravel-mix')
 
-mix.setPublicPath('./')
-   .js('resources/js/field.js', 'dist/js')
-   .sass('resources/sass/field.scss', 'dist/css')
+mix
+    .setPublicPath("dist")
+    .js('resources/js/field.js', 'js')
+    .sass('resources/sass/field.scss', 'css')
+    .vue({ version: 3 })
+    .webpackConfig({
+        externals: {
+            vue: 'Vue',
+        },
+    })
