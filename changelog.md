@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Add support for Nova 4 (See PR #20 - @max-zu)
+- Upgrade to Vue 3 (See PR #20 - @max-zu)
+
 ## [0.5.0] - 2022-02-14
 
 ### Added
