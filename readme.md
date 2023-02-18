@@ -1,3 +1,7 @@
+
+> **Warning**
+> This library is not maintained anymore but feel free to fork it. For info do not exitate [contacting me](https://github.com/micc83).
+
 # Laravel Nova Help Field
 
 A custom Nova fields which allows to show custom help messages within form, detail and index screens.
